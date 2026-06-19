@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simposio Latinoamericano de Ejercicio Físico, Salud y Rendimiento</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0B2341',    /* Azul Escuro da Logo */
+                        secondary: '#D92128',  /* Vermelho da Logo */
+                        accent: '#F39200',     /* Amarelo da Logo */
+                        tertiary: '#00833F',   /* Verde da Logo */
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans text-slate-800 bg-slate-50 antialiased selection:bg-primary selection:text-white relative overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <img src="image_209678.jpg" alt="Logo Simposio" class="h-12 w-12 object-contain rounded-full shadow-sm">
+                    <div class="hidden sm:block">
+                        <span class="font-black text-xl text-primary leading-none block tracking-tight">Simposio</span>
+                        <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest block">Latinoamericano</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#hero" class="text-slate-600 hover:text-primary font-semibold transition-colors text-sm uppercase tracking-wide" data-i18n="nav_inicio">Inicio</a>
+                    <a href="#info" class="text-slate-600 hover:text-primary font-semibold transition-colors text-sm uppercase tracking-wide" data-i18n="nav_info">Sobre el Evento</a>
+                    <a href="#cronograma" class="text-slate-600 hover:text-primary font-semibold transition-colors text-sm uppercase tracking-wide" data-i18n="nav_cronograma">Cronograma</a>
+                    
+                    <!-- Language Switcher -->
+                    <div class="flex bg-slate-100 rounded-lg p-1 border border-slate-200">
+                        <button onclick="setLang('es')" id="btn-es" class="px-3 py-1 text-xs font-bold rounded-md bg-white text-primary shadow-sm transition-all">ES</button>
+                        <button onclick="setLang('pt')" id="btn-pt" class="px-3 py-1 text-xs font-bold rounded-md text-slate-500 hover:text-slate-700 transition-all">PT</button>
+                    </div>
+
+                    <a href="#inscripcion" class="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-full font-bold transition-all transform hover:-translate-y-0.5 shadow-md text-sm" data-i18n="nav_inscripcion">Inscripciones</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center gap-4">
+                    <div class="flex bg-slate-100 rounded-lg p-1 border border-slate-200">
+                        <button onclick="setLang('es')" id="btn-es-mobile" class="px-2 py-1 text-xs font-bold rounded-md bg-white text-primary shadow-sm transition-all">ES</button>
+                        <button onclick="setLang('pt')" id="btn-pt-mobile" class="px-2 py-1 text-xs font-bold rounded-md text-slate-500 transition-all">PT</button>
+                    </div>
+                    <button id="mobileMenuBtn" class="text-slate-600 hover:text-primary focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-slate-100 absolute w-full shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-2 flex flex-col text-center">
+                <a href="#hero" class="block px-3 py-3 text-base font-semibold text-slate-700 hover:bg-slate-50 hover:text-primary rounded-lg" data-i18n="nav_inicio">Inicio</a>
+                <a href="#info" class="block px-3 py-3 text-base font-semibold text-slate-700 hover:bg-slate-50 hover:text-primary rounded-lg" data-i18n="nav_info">Sobre el Evento</a>
+                <a href="#cronograma" class="block px-3 py-3 text-base font-semibold text-slate-700 hover:bg-slate-50 hover:text-primary rounded-lg" data-i18n="nav_cronograma">Cronograma</a>
+                <a href="#inscripcion" class="mt-4 w-full bg-primary text-white px-5 py-3 rounded-xl font-bold shadow-md block" data-i18n="nav_inscripcion">Inscripciones</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden flex items-center min-h-[85vh] bg-gradient-to-b from-white to-slate-50">
+        <!-- Abstract Decoration -->
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-50 rounded-full blur-3xl opacity-60 -translate-y-1/2 translate-x-1/3"></div>
+        <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-red-50 rounded-full blur-3xl opacity-60 translate-y-1/3 -translate-x-1/4"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+                
+                <!-- Hero Image/Logo -->
+                <div class="w-full lg:w-5/12 flex justify-center order-2 lg:order-1">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80 lg:w-[400px] lg:h-[400px] rounded-full bg-white shadow-2xl p-4 border border-slate-100 transform hover:scale-105 transition-transform duration-700">
+                        <!-- Colored ring matching logo -->
+                        <div class="absolute -inset-3 rounded-full border-[3px] border-transparent border-t-secondary border-r-tertiary border-b-primary border-l-accent opacity-50 animate-[spin_30s_linear_infinite]"></div>
+                        <img src="image_209678.jpg" alt="Logo do Simpósio" class="w-full h-full object-cover rounded-full shadow-inner">
+                    </div>
+                </div>
+
+                <!-- Text Content -->
+                <div class="w-full lg:w-7/12 text-center lg:text-left order-1 lg:order-2">
+                    <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white text-primary font-bold text-sm mb-6 border border-slate-200 shadow-sm uppercase tracking-wider">
+                        <i class="far fa-calendar-alt"></i>
+                        <span>29 de Agosto | 09:00 - 14:00 (GMT-3)</span>
+                    </div>
+                    
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.1] mb-6">
+                        <span class="block text-xl md:text-2xl font-bold text-slate-500 mb-3 uppercase tracking-widest" data-i18n="hero_title1">I Simposio Latinoamericano de</span>
+                        <span class="text-primary" data-i18n="hero_title2">
+                            Ejercicio Físico, Salud y Rendimiento
+                        </span>
+                    </h1>
+                    
+                    <p class="mt-6 text-lg md:text-xl text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed" data-i18n="hero_subtitle">
+                        Únete a los principales investigadores y profesionales de América Latina para debatir las últimas evidencias en ciencias del deporte y la salud.
+                    </p>
+                    
+                    <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#inscripcion" class="px-8 py-4 bg-primary text-white rounded-full font-bold text-lg hover:bg-primary/90 transition-all transform hover:-translate-y-1 shadow-lg flex items-center justify-center gap-2">
+                            <span data-i18n="hero_btn_main">Inscribirse Ahora</span> <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#cronograma" class="px-8 py-4 bg-white text-slate-700 border border-slate-300 rounded-full font-bold text-lg hover:border-primary hover:text-primary hover:bg-slate-50 transition-all flex items-center justify-center gap-2">
+                            <i class="far fa-clock"></i> <span data-i18n="hero_btn_sec">Ver Programa</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Section (Sobre el Evento) -->
+    <section id="info" class="py-24 bg-white relative border-t border-slate-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-slate-100 text-slate-600 font-bold text-sm mb-6 uppercase tracking-wider">
+                <i class="fas fa-info-circle text-primary"></i>
+                <span data-i18n="info_tag">Sobre el Simposio</span>
+            </div>
+
+            <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6 leading-tight">
+                <span data-i18n="info_title_main">Integrando Ciencia y Práctica en</span><br>
+                <span class="text-primary" data-i18n="info_title_highlight">América Latina</span>
+            </h2>
+            
+            <div class="text-lg text-slate-600 space-y-5 leading-relaxed text-left md:text-center mb-10">
+                <p data-i18n="info_p1">
+                    El Simposio Latinoamericano de Ejercicio Físico, Salud y Rendimiento es un espacio académico diseñado para fomentar el intercambio de conocimientos entre investigadores, estudiantes y profesionales del deporte y la salud en toda la región.
+                </p>
+                <p data-i18n="info_p2">
+                    Nuestro objetivo principal es presentar y debatir las evidencias científicas más recientes, conectando la teoría generada en los laboratorios con la aplicación práctica en centros de entrenamiento y clínicas de rehabilitación.
+                </p>
+            </div>
+            
+            <div class="pt-8 mt-6 border-t border-slate-100">
+                <h4 class="font-bold text-slate-800 mb-6 uppercase text-sm tracking-widest" data-i18n="info_scope">Áreas Temáticas:</h4>
+                <ul class="grid sm:grid-cols-2 gap-4 text-base max-w-2xl mx-auto text-left">
+                    <li class="flex items-center gap-3 bg-slate-50 p-4 rounded-xl border border-slate-100 transition-colors hover:border-primary/30"><i class="fas fa-check text-tertiary"></i> <span data-i18n="scope_1">Fisiología Aplicada</span></li>
+                    <li class="flex items-center gap-3 bg-slate-50 p-4 rounded-xl border border-slate-100 transition-colors hover:border-primary/30"><i class="fas fa-check text-tertiary"></i> <span data-i18n="scope_2">Entrenamiento de Fuerza</span></li>
+                    <li class="flex items-center gap-3 bg-slate-50 p-4 rounded-xl border border-slate-100 transition-colors hover:border-primary/30"><i class="fas fa-check text-tertiary"></i> <span data-i18n="scope_3">Ambientes Extremos</span></li>
+                    <li class="flex items-center gap-3 bg-slate-50 p-4 rounded-xl border border-slate-100 transition-colors hover:border-primary/30"><i class="fas fa-check text-tertiary"></i> <span data-i18n="scope_4">Métodos Interválicos</span></li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Schedule Section (Centered Layout) -->
+    <section id="cronograma" class="py-24 bg-slate-50 relative border-t border-slate-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-black text-primary mb-4 tracking-tight uppercase" data-i18n="schedule_title">Cronograma Oficial</h2>
+                <div class="inline-block bg-white px-6 py-2 rounded-full shadow-sm border border-slate-200 text-slate-600 font-semibold">
+                    <i class="far fa-calendar text-primary mr-2"></i> <span data-i18n="schedule_subtitle">29 de Agosto | Horario oficial: GMT-3</span>
+                </div>
+            </div>
+
+            <!-- Centered Timeline Container -->
+            <div class="space-y-8 relative">
+                
+                <!-- Event Start -->
+                <div class="bg-primary text-white rounded-xl shadow-md p-5 flex items-center justify-center gap-4 text-center max-w-sm mx-auto">
+                    <i class="fas fa-flag text-2xl text-accent"></i>
+                    <div>
+                        <h3 class="text-lg font-bold" data-i18n="event_start">Inicio del Evento</h3>
+                        <p class="text-slate-200 font-semibold">09:00</p>
+                    </div>
+                </div>
+
+                <!-- Welcome -->
+                <div class="bg-white border border-slate-200 rounded-xl shadow-sm p-5 flex items-center justify-center gap-4 text-center max-w-sm mx-auto">
+                    <i class="fas fa-handshake text-2xl text-primary"></i>
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-800" data-i18n="event_welcome">Bienvenida</h3>
+                        <p class="text-primary font-bold">09:15</p>
+                    </div>
+                </div>
+
+                <!-- Mesa 1 -->
+                <div class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden w-full transition-transform hover:-translate-y-1 duration-300">
+                    <div class="bg-primary p-5 flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-3">
+                        <h3 class="text-xl font-bold text-white" data-i18n="mesa1_title">Mesa 1: Producción de conocimiento en ciencias del ejercicio en América Latina</h3>
+                        <span class="text-xs font-bold uppercase tracking-wider text-primary bg-white py-1.5 px-4 rounded-full whitespace-nowrap" data-i18n="mesa1_mod">Mod: Michel Milistedt (Brasil)</span>
+                    </div>
+                    
+                    <div class="divide-y divide-slate-100 p-2 md:p-6">
+                        <!-- Talk 1.1 -->
+                        <div class="p-4 hover:bg-slate-50 rounded-lg transition-colors flex flex-col md:flex-row gap-4 items-start md:items-center">
+                            <div class="w-20 font-black text-xl text-primary text-center bg-slate-100 py-2 rounded-lg shrink-0">09:30</div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-lg mb-1 leading-snug">Aplicaciones de la variabilidad del ritmo cardíaco en la salud y el rendimiento físico.</h4>
+                                <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 text-sm">
+                                    <span class="text-slate-600"><i class="fas fa-user-circle text-slate-400 mr-1"></i> <strong>Marcelo Cano</strong> - Universidad de Chile (Chile)</span>
+                                    <span class="text-slate-500"><i class="fab fa-orcid text-[#A6CE39] mr-1"></i><a href="https://orcid.org/" target="_blank" class="hover:underline">0000-0000-0000-0000</a></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Talk 1.2 -->
+                        <div class="p-4 hover:bg-slate-50 rounded-lg transition-colors flex flex-col md:flex-row gap-4 items-start md:items-center">
+                            <div class="w-20 font-black text-xl text-primary text-center bg-slate-100 py-2 rounded-lg shrink-0">09:45</div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-lg mb-1 leading-snug" data-i18n="mesa1_t2">Tema abierto sobre actividad física</h4>
+                                <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 text-sm">
+                                    <span class="text-slate-600"><i class="fas fa-user-circle text-slate-400 mr-1"></i> <strong>Cassiano Ricardo Rech</strong> - UFSC (Brasil)</span>
+                                    <span class="text-slate-500"><i class="fab fa-orcid text-[#A6CE39] mr-1"></i><a href="https://orcid.org/" target="_blank" class="hover:underline">0000-0000-0000-0000</a></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Talk 1.3 -->
+                        <div class="p-4 hover:bg-slate-50 rounded-lg transition-colors flex flex-col md:flex-row gap-4 items-start md:items-center">
+                            <div class="w-20 font-black text-xl text-primary text-center bg-slate-100 py-2 rounded-lg shrink-0">10:00</div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-lg mb-1 leading-snug">Tendencias de investigación sobre actividad física y sedentarismo en adolescentes de américa latina</h4>
+                                <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 text-sm">
+                                    <span class="text-slate-600"><i class="fas fa-user-circle text-slate-400 mr-1"></i> <strong>Sandy Dorian Isla Alcoser</strong> - UNMSM (Perú)</span>
+                                    <span class="text-slate-500"><i class="fab fa-orcid text-[#A6CE39] mr-1"></i><a href="https://orcid.org/" target="_blank" class="hover:underline">0000-0000-0000-0000</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mesa 2 -->
+                <div class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden w-full transition-transform hover:-translate-y-1 duration-300">
+                    <div class="bg-primary p-5 flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-3">
+                        <h3 class="text-xl font-bold text-white" data-i18n="mesa2_title">Mesa 2: Evaluación y entrenamiento de fuerza</h3>
+                        <span class="text-xs font-bold uppercase tracking-wider text-primary bg-white py-1.5 px-4 rounded-full whitespace-nowrap" data-i18n="mesa2_mod">Mod: Rodrigo Delevatti (Brasil)</span>
+                    </div>
+                    
+                    <div class="divide-y divide-slate-100 p-2 md:p-6">
+                        <!-- Talk 2.1 -->
+                        <div class="p-4 hover:bg-slate-50 rounded-lg transition-colors flex flex-col md:flex-row gap-4 items-start md:items-center">
+                            <div class="w-20 font-black text-xl text-primary text-center bg-slate-100 py-2 rounded-lg shrink-0">10:30</div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-lg mb-1 leading-snug" data-i18n="mesa2_t1">Treinamento de força no meio aquático: implicações para a saúde e funcionalidade</h4>
+                                <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 text-sm">
+                                    <span class="text-slate-600"><i class="fas fa-user-circle text-slate-400 mr-1"></i> <strong>Cristiane Lima Alberton</strong> - UFPel (Brasil)</span>
+                                    <span class="text-slate-500"><i class="fab fa-orcid text-[#A6CE39] mr-1"></i><a href="https://orcid.org/" target="_blank" class="hover:underline">0000-0000-0000-0000</a></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Talk 2.2 -->
+                        <div class="p-4 hover:bg-slate-50 rounded-lg transition-colors flex flex-col md:flex-row gap-4 items-start md:items-center">
+                            <div class="w-20 font-black text-xl text-primary text-center bg-slate-100 py-2 rounded-lg shrink-0">10:45</div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-lg mb-1 leading-snug" data-i18n="mesa2_t2">Treinamento de força muscular e performance de endurance</h4>
+                                <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 text-sm">
+                                    <span class="text-slate-600"><i class="fas fa-user-circle text-slate-400 mr-1"></i> <strong>Camila Coelho Greco</strong> - UNESP (Brasil)</span>
+                                    <span class="text-slate-500"><i class="fab fa-orcid text-[#A6CE39] mr-1"></i><a href="https://orcid.org/" target="_blank" class="hover:underline">0000-0000-0000-0000</a></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Talk 2.3 -->
+                        <div class="p-4 hover:bg-slate-50 rounded-lg transition-colors flex flex-col md:flex-row gap-4 items-start md:items-center">
+                            <div class="w-20 font-black text-xl text-primary text-center bg-slate-100 py-2 rounded-lg shrink-0">11:00</div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-lg mb-1 leading-snug">Entrenamiento mediante ejercicios con salto: Evidencia científica y brechas de conocimiento.</h4>
+                                <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 text-sm">
+                                    <span class="text-slate-600"><i class="fas fa-user-circle text-slate-400 mr-1"></i> <strong>Rodrigo Ramirez-Campillo</strong> - (Chile)</span>
+                                    <span class="text-slate-500"><i class="fab fa-orcid text-[#A6CE39] mr-1"></i><a href="https://orcid.org/" target="_blank" class="hover:underline">0000-0000-0000-0000</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mesa 3 -->
+                <div class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden w-full transition-transform hover:-translate-y-1 duration-300">
+                    <div class="bg-primary p-5 flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-3">
+                        <h3 class="text-xl font-bold text-white" data-i18n="mesa3_title">Mesa 3: Ejercicio en ambientes extremos</h3>
+                        <span class="text-xs font-bold uppercase tracking-wider text-primary bg-white py-1.5 px-4 rounded-full whitespace-nowrap" data-i18n="mesa3_mod">Mod: Hugo Aceituno Pinto (Chile)</span>
+                    </div>
+                    
+                    <div class="divide-y divide-slate-100 p-2 md:p-6">
+                        <!-- Talk 3.1 -->
+                        <div class="p-4 hover:bg-slate-50 rounded-lg transition-colors flex flex-col md:flex-row gap-4 items-start md:items-center">
+                            <div class="w-20 font-black text-xl text-primary text-center bg-slate-100 py-2 rounded-lg shrink-0">11:30</div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-lg mb-1 leading-snug">Mujeres desafiando la altura: fisiología, ejercicio y adaptación a ambiente extremo</h4>
+                                <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 text-sm">
+                                    <span class="text-slate-600"><i class="fas fa-user-circle text-slate-400 mr-1"></i> <strong>Morin Lang</strong> - Universidad de Chile (Chile)</span>
+                                    <span class="text-slate-500"><i class="fab fa-orcid text-[#A6CE39] mr-1"></i><a href="https://orcid.org/" target="_blank" class="hover:underline">0000-0000-0000-0000</a></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Talk 3.2 -->
+                        <div class="p-4 hover:bg-slate-50 rounded-lg transition-colors flex flex-col md:flex-row gap-4 items-start md:items-center">
+                            <div class="w-20 font-black text-xl text-primary text-center bg-slate-100 py-2 rounded-lg shrink-0">11:45</div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-lg mb-1 leading-snug" data-i18n="mesa3_t2">Exercício físico e poluição do ar: o desafio dos grandes centros urbanos.</h4>
+                                <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 text-sm">
+                                    <span class="text-slate-600"><i class="fas fa-user-circle text-slate-400 mr-1"></i> <strong>Ramon Cruz</strong> - UFSC (Brasil)</span>
+                                    <span class="text-slate-500"><i class="fab fa-orcid text-[#A6CE39] mr-1"></i><a href="https://orcid.org/" target="_blank" class="hover:underline">0000-0000-0000-0000</a></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Talk 3.3 -->
+                        <div class="p-4 hover:bg-slate-50 rounded-lg transition-colors flex flex-col md:flex-row gap-4 items-start md:items-center">
+                            <div class="w-20 font-black text-xl text-primary text-center bg-slate-100 py-2 rounded-lg shrink-0">12:00</div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-lg mb-1 leading-snug">Electrocardiographic Profile and sex related differences in young adults living at moderate high altitude</h4>
+                                <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 text-sm">
+                                    <span class="text-slate-600"><i class="fas fa-user-circle text-slate-400 mr-1"></i> <strong>Wilmer Danilo Esparza Yánez</strong> - UDLA (Ecuador)</span>
+                                    <span class="text-slate-500"><i class="fab fa-orcid text-[#A6CE39] mr-1"></i><a href="https://orcid.org/" target="_blank" class="hover:underline">0000-0000-0000-0000</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mesa 4 -->
+                <div class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden w-full transition-transform hover:-translate-y-1 duration-300">
+                    <div class="bg-primary p-5 flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-3">
+                        <h3 class="text-xl font-bold text-white" data-i18n="mesa4_title">Mesa 4: Entrenamientos de intervalos en distintos contextos</h3>
+                        <span class="text-xs font-bold uppercase tracking-wider text-primary bg-white py-1.5 px-4 rounded-full whitespace-nowrap" data-i18n="mesa4_mod">Mod: Tiago Turnes (Brasil)</span>
+                    </div>
+                    
+                    <div class="divide-y divide-slate-100 p-2 md:p-6">
+                        <!-- Talk 4.1 -->
+                        <div class="p-4 hover:bg-slate-50 rounded-lg transition-colors flex flex-col md:flex-row gap-4 items-start md:items-center">
+                            <div class="w-20 font-black text-xl text-primary text-center bg-slate-100 py-2 rounded-lg shrink-0">12:30</div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-lg mb-1 leading-snug">Determinantes de la carga como modificadores del efecto del entrenamiento</h4>
+                                <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 text-sm">
+                                    <span class="text-slate-600"><i class="fas fa-user-circle text-slate-400 mr-1"></i> <strong>Edgardo Opazo</strong> - Universidad de Chile (Chile)</span>
+                                    <span class="text-slate-500"><i class="fab fa-orcid text-[#A6CE39] mr-1"></i><a href="https://orcid.org/" target="_blank" class="hover:underline">0000-0000-0000-0000</a></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Talk 4.2 -->
+                        <div class="p-4 hover:bg-slate-50 rounded-lg transition-colors flex flex-col md:flex-row gap-4 items-start md:items-center">
+                            <div class="w-20 font-black text-xl text-primary text-center bg-slate-100 py-2 rounded-lg shrink-0">12:45</div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-lg mb-1 leading-snug">Entrenamiento de intervalos en subida: respuestas agudas del VO2 y la frecuencia cardíaca.</h4>
+                                <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 text-sm">
+                                    <span class="text-slate-600"><i class="fas fa-user-circle text-slate-400 mr-1"></i> <strong>Ricardo Dantas de Lucas</strong> - UFSC (Brasil)</span>
+                                    <span class="text-slate-500"><i class="fab fa-orcid text-[#A6CE39] mr-1"></i><a href="https://orcid.org/" target="_blank" class="hover:underline">0000-0000-0000-0000</a></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Talk 4.3 -->
+                        <div class="p-4 hover:bg-slate-50 rounded-lg transition-colors flex flex-col md:flex-row gap-4 items-start md:items-center">
+                            <div class="w-20 font-black text-xl text-primary text-center bg-slate-100 py-2 rounded-lg shrink-0">13:00</div>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-lg mb-1 leading-snug">Efectos cardiometabólicos del HIF</h4>
+                                <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 text-sm">
+                                    <span class="text-slate-600"><i class="fas fa-user-circle text-slate-400 mr-1"></i> <strong>Stefano Benítez</strong> - Univ. de la República (Uruguay)</span>
+                                    <span class="text-slate-500"><i class="fab fa-orcid text-[#A6CE39] mr-1"></i><a href="https://orcid.org/" target="_blank" class="hover:underline">0000-0000-0000-0000</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Close -->
+                <div class="bg-slate-800 text-white rounded-xl shadow-md p-5 flex items-center justify-center gap-4 text-center max-w-sm mx-auto mt-12">
+                    <i class="fas fa-door-closed text-2xl text-slate-400"></i>
+                    <div>
+                        <h3 class="text-lg font-bold" data-i18n="event_close">Cierre del Evento</h3>
+                        <p class="text-slate-400 font-semibold">13:30</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action / Registration -->
+    <section id="inscripcion" class="py-20 bg-white border-t border-slate-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-4" data-i18n="reg_title">Asegura tu participación</h2>
+            <p class="text-lg text-slate-600 mb-8 max-w-2xl mx-auto" data-i18n="reg_desc">
+                No pierdas la oportunidad de actualizarte con los mayores especialistas de América Latina. Emisión de certificado de participación.
+            </p>
+            
+            <a href="#" class="inline-flex items-center justify-center gap-3 px-10 py-4 bg-primary text-white rounded-full font-bold text-xl hover:bg-primary/90 transition-all transform hover:-translate-y-1 shadow-lg">
+                <i class="fas fa-ticket-alt"></i> <span data-i18n="reg_btn">Inscribirse Ahora</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-slate-300 py-10 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-4">
+                <div class="bg-white p-1 rounded-full">
+                    <img src="image_209678.jpg" alt="Logo Simposio" class="h-10 w-10 object-contain rounded-full">
+                </div>
+                <div>
+                    <p class="font-bold text-white text-lg leading-tight">Simposio Latinoamericano</p>
+                    <p class="text-xs tracking-wider uppercase text-slate-400" data-i18n="footer_sub">Ejercicio Físico, Salud y Rendimiento</p>
+                </div>
+            </div>
+            
+            <div class="text-center md:text-right text-sm">
+                <p>&copy; 2026 Simposio Latinoamericano.</p>
+                <p data-i18n="footer_rights">Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Translations Dictionary
+        const translations = {
+            es: {
+                nav_inicio: "Inicio",
+                nav_info: "Sobre el Evento",
+                nav_cronograma: "Cronograma",
+                nav_inscripcion: "Inscripciones",
+                hero_title1: "I Simposio Latinoamericano de",
+                hero_title2: "Ejercicio Físico, Salud y Rendimiento",
+                hero_subtitle: "Únete a los principales investigadores y profesionales de América Latina para debatir las últimas evidencias en ciencias del deporte y la salud.",
+                hero_btn_main: "Inscribirse Ahora",
+                hero_btn_sec: "Ver Programa",
+                info_tag: "Sobre el Simposio",
+                info_title_main: "Integrando Ciencia y Práctica en",
+                info_title_highlight: "América Latina",
+                info_p1: "El Simposio Latinoamericano de Ejercicio Físico, Salud y Rendimiento es un espacio académico diseñado para fomentar el intercambio de conocimientos entre investigadores, estudiantes y profesionales del deporte y la salud en toda la región.",
+                info_p2: "Nuestro objetivo principal es presentar y debatir las evidencias científicas más recientes, conectando la teoría generada en los laboratorios con la aplicación práctica en centros de entrenamiento y clínicas de rehabilitación.",
+                info_scope: "Áreas Temáticas:",
+                scope_1: "Fisiología Aplicada",
+                scope_2: "Entrenamiento de Fuerza",
+                scope_3: "Ambientes Extremos",
+                scope_4: "Métodos Interválicos",
+                placeholder_img: "Espacio para Foto del Evento",
+                schedule_title: "Cronograma Oficial",
+                schedule_subtitle: "29 de Agosto | Horario oficial: GMT-3",
+                event_start: "Inicio del Evento",
+                event_welcome: "Bienvenida",
+                mesa1_title: "Mesa 1: Producción de conocimiento en ciencias del ejercicio en América Latina",
+                mesa1_mod: "Mod: Michel Milistedt (Brasil)",
+                mesa1_t2: "Tema abierto sobre actividad física",
+                mesa2_title: "Mesa 2: Evaluación y entrenamiento de fuerza",
+                mesa2_mod: "Mod: Rodrigo Delevatti (Brasil)",
+                mesa2_t1: "Treinamento de força no meio aquático: implicações para a saúde e funcionalidade",
+                mesa2_t2: "Treinamento de força muscular e performance de endurance",
+                mesa3_title: "Mesa 3: Ejercicio en ambientes extremos",
+                mesa3_mod: "Mod: Hugo Aceituno Pinto (Chile)",
+                mesa3_t2: "Exercício físico e poluição do ar: o desafio dos grandes centros urbanos.",
+                mesa4_title: "Mesa 4: Entrenamientos de intervalos en distintos contextos",
+                mesa4_mod: "Mod: Tiago Turnes (Brasil)",
+                event_close: "Cierre del Evento",
+                reg_title: "Asegura tu participación",
+                reg_desc: "No pierdas la oportunidad de actualizarte con los mayores especialistas de América Latina. Emisión de certificado de participación.",
+                reg_btn: "Inscribirse Ahora",
+                footer_sub: "Ejercicio Físico, Salud y Rendimiento",
+                footer_rights: "Todos los derechos reservados."
+            },
+            pt: {
+                nav_inicio: "Início",
+                nav_info: "Sobre o Evento",
+                nav_cronograma: "Cronograma",
+                nav_inscripcion: "Inscrições",
+                hero_title1: "I Simpósio Latino-Americano de",
+                hero_title2: "Exercício Físico, Saúde e Rendimento",
+                hero_subtitle: "Junte-se aos principais pesquisadores e profissionais da América Latina para debater as evidências mais recentes em ciências do esporte e saúde.",
+                hero_btn_main: "Inscrever-se Agora",
+                hero_btn_sec: "Ver Programa",
+                info_tag: "Sobre o Simpósio",
+                info_title_main: "Integrando Ciência e Prática na",
+                info_title_highlight: "América Latina",
+                info_p1: "O Simpósio Latino-Americano de Exercício Físico, Saúde e Rendimento é um espaço acadêmico desenhado para fomentar o intercâmbio de conhecimentos entre pesquisadores, estudantes e profissionais do esporte e da saúde em toda a região.",
+                info_p2: "Nosso objetivo principal é apresentar e debater as evidências científicas mais recentes, conectando a teoria gerada nos laboratórios com a aplicação prática em centros de treinamento e clínicas de reabilitação.",
+                info_scope: "Áreas Temáticas:",
+                scope_1: "Fisiologia Aplicada",
+                scope_2: "Treinamento de Força",
+                scope_3: "Ambientes Extremos",
+                scope_4: "Métodos Intervalados",
+                placeholder_img: "Espaço para Foto do Evento",
+                schedule_title: "Cronograma Oficial",
+                schedule_subtitle: "29 de Agosto | Horário oficial: GMT-3",
+                event_start: "Início do Evento",
+                event_welcome: "Boas-vindas",
+                mesa1_title: "Mesa 1: Produção de conhecimento em ciências do exercício na América Latina",
+                mesa1_mod: "Mod: Michel Milistedt (Brasil)",
+                mesa1_t2: "Tema aberto sobre atividade física",
+                mesa2_title: "Mesa 2: Avaliação e treinamento de força",
+                mesa2_mod: "Mod: Rodrigo Delevatti (Brasil)",
+                mesa2_t1: "Treinamento de força no meio aquático: implicações para a saúde e funcionalidade",
+                mesa2_t2: "Treinamento de força muscular e performance de endurance",
+                mesa3_title: "Mesa 3: Exercício em ambientes extremos",
+                mesa3_mod: "Mod: Hugo Aceituno Pinto (Chile)",
+                mesa3_t2: "Exercício físico e poluição do ar: o desafio dos grandes centros urbanos.",
+                mesa4_title: "Mesa 4: Treinamentos intervalados em diferentes contextos",
+                mesa4_mod: "Mod: Tiago Turnes (Brasil)",
+                event_close: "Encerramento do Evento",
+                reg_title: "Garanta sua participação",
+                reg_desc: "Não perca a oportunidade de se atualizar com os maiores especialistas da América Latina. Emissão de certificado de participação.",
+                reg_btn: "Inscrever-se Agora",
+                footer_sub: "Exercício Físico, Saúde e Rendimento",
+                footer_rights: "Todos os direitos reservados."
+            }
+        };
+
+        // Language Switcher Logic
+        function setLang(lang) {
+            document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'es';
+            
+            // Update texts
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            // Update buttons styling Desktop
+            const btnEs = document.getElementById('btn-es');
+            const btnPt = document.getElementById('btn-pt');
+            // Update buttons styling Mobile
+            const btnEsMob = document.getElementById('btn-es-mobile');
+            const btnPtMob = document.getElementById('btn-pt-mobile');
+
+            if (lang === 'es') {
+                btnEs.className = "px-3 py-1 text-xs font-bold rounded-md bg-white text-primary shadow-sm transition-all";
+                btnPt.className = "px-3 py-1 text-xs font-bold rounded-md text-slate-500 hover:text-slate-700 transition-all";
+                btnEsMob.className = "px-2 py-1 text-xs font-bold rounded-md bg-white text-primary shadow-sm transition-all";
+                btnPtMob.className = "px-2 py-1 text-xs font-bold rounded-md text-slate-500 transition-all";
+            } else {
+                btnPt.className = "px-3 py-1 text-xs font-bold rounded-md bg-white text-primary shadow-sm transition-all";
+                btnEs.className = "px-3 py-1 text-xs font-bold rounded-md text-slate-500 hover:text-slate-700 transition-all";
+                btnPtMob.className = "px-2 py-1 text-xs font-bold rounded-md bg-white text-primary shadow-sm transition-all";
+                btnEsMob.className = "px-2 py-1 text-xs font-bold rounded-md text-slate-500 transition-all";
+            }
+        }
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body>
+</html>
