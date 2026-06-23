@@ -37,7 +37,7 @@
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center gap-3">
-                    <img src="image_209678.jpeg" alt="Logo Simposio" class="h-12 w-12 object-contain rounded-full shadow-sm">
+                    <img src="image_209678.jpg" alt="Logo Simposio" class="h-12 w-12 object-contain rounded-full shadow-sm" onerror="this.src='https://placehold.co/100x100/0B2341/FFFFFF?text=SL'">
                     <div class="hidden sm:block">
                         <span class="font-black text-xl text-primary leading-none block tracking-tight">Simposio</span>
                         <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest block">Latinoamericano</span>
@@ -56,7 +56,7 @@
                         <button onclick="setLang('pt')" id="btn-pt" class="px-3 py-1 text-xs font-bold rounded-md text-slate-500 hover:text-slate-700 transition-all">PT</button>
                     </div>
 
-                    <a href="#inscripcion" class="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-full font-bold transition-all transform hover:-translate-y-0.5 shadow-md text-sm" data-i18n="nav_inscripcion">Inscripciones</a>
+                    <a href="https://inscricoes.ufsc.br/simposio-ejercicio-fisico" target="_blank" class="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-full font-bold transition-all transform hover:-translate-y-0.5 shadow-md text-sm" data-i18n="nav_inscripcion">Inscripciones</a>
                 </div>
 
                 <!-- Mobile menu button -->
@@ -78,7 +78,7 @@
                 <a href="#hero" class="block px-3 py-3 text-base font-semibold text-slate-700 hover:bg-slate-50 hover:text-primary rounded-lg" data-i18n="nav_inicio">Inicio</a>
                 <a href="#info" class="block px-3 py-3 text-base font-semibold text-slate-700 hover:bg-slate-50 hover:text-primary rounded-lg" data-i18n="nav_info">Sobre el Evento</a>
                 <a href="#cronograma" class="block px-3 py-3 text-base font-semibold text-slate-700 hover:bg-slate-50 hover:text-primary rounded-lg" data-i18n="nav_cronograma">Cronograma</a>
-                <a href="#inscripcion" class="mt-4 w-full bg-primary text-white px-5 py-3 rounded-xl font-bold shadow-md block" data-i18n="nav_inscripcion">Inscripciones</a>
+                <a href="https://inscricoes.ufsc.br/simposio-ejercicio-fisico" target="_blank" class="mt-4 w-full bg-primary text-white px-5 py-3 rounded-xl font-bold shadow-md block" data-i18n="nav_inscripcion">Inscripciones</a>
             </div>
         </div>
     </nav>
@@ -86,8 +86,7 @@
     <!-- Hero Section -->
     <section id="hero" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden flex items-center min-h-[85vh] bg-gradient-to-b from-white to-slate-50">
         <!-- Abstract Decoration -->
-        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-50 rounded-full blur-3xl opacity-60 -translate-y-1/2 translate-x-1/3"></div>
-        <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-red-50 rounded-full blur-3xl opacity-60 translate-y-1/3 -translate-x-1/4"></div>
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-slate-100 rounded-full blur-3xl opacity-60 -translate-y-1/2 translate-x-1/3"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
             <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
@@ -95,9 +94,8 @@
                 <!-- Hero Image/Logo -->
                 <div class="w-full lg:w-5/12 flex justify-center order-2 lg:order-1">
                     <div class="relative w-64 h-64 md:w-80 md:h-80 lg:w-[400px] lg:h-[400px] rounded-full bg-white shadow-2xl p-4 border border-slate-100 transform hover:scale-105 transition-transform duration-700">
-                        <!-- Colored ring matching logo -->
                         <div class="absolute -inset-3 rounded-full border-[3px] border-transparent border-t-secondary border-r-tertiary border-b-primary border-l-accent opacity-50 animate-[spin_30s_linear_infinite]"></div>
-                        <img src="image_209678.jpeg" alt="Logo do Simpósio" class="w-full h-full object-cover rounded-full shadow-inner">
+                        <img src="image_209678.jpg" alt="Logo do Simpósio" class="w-full h-full object-cover rounded-full shadow-inner" onerror="this.src='https://placehold.co/400x400/0B2341/FFFFFF?text=Simposio'">
                     </div>
                 </div>
 
@@ -120,7 +118,7 @@
                     </p>
                     
                     <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                        <a href="#inscripcion" class="px-8 py-4 bg-primary text-white rounded-full font-bold text-lg hover:bg-primary/90 transition-all transform hover:-translate-y-1 shadow-lg flex items-center justify-center gap-2">
+                        <a href="https://inscricoes.ufsc.br/simposio-ejercicio-fisico" target="_blank" class="px-8 py-4 bg-primary text-white rounded-full font-bold text-lg hover:bg-primary/90 transition-all transform hover:-translate-y-1 shadow-lg flex items-center justify-center gap-2">
                             <span data-i18n="hero_btn_main">Inscribirse Ahora</span> <i class="fas fa-arrow-right"></i>
                         </a>
                         <a href="#cronograma" class="px-8 py-4 bg-white text-slate-700 border border-slate-300 rounded-full font-bold text-lg hover:border-primary hover:text-primary hover:bg-slate-50 transition-all flex items-center justify-center gap-2">
@@ -133,7 +131,7 @@
         </div>
     </section>
 
-    <!-- Info Section (Sobre el Evento) -->
+    <!-- Info Section (Sobre el Evento - Centered & Clean) -->
     <section id="info" class="py-24 bg-white relative border-t border-slate-100">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             
@@ -147,7 +145,7 @@
                 <span class="text-primary" data-i18n="info_title_highlight">América Latina</span>
             </h2>
             
-            <div class="text-lg text-slate-600 space-y-5 leading-relaxed text-left md:text-center mb-10">
+            <div class="text-lg text-slate-600 space-y-5 leading-relaxed mb-12">
                 <p data-i18n="info_p1">
                     El Simposio Latinoamericano de Ejercicio Físico, Salud y Rendimiento es un espacio académico diseñado para fomentar el intercambio de conocimientos entre investigadores, estudiantes y profesionales del deporte y la salud en toda la región.
                 </p>
@@ -156,20 +154,21 @@
                 </p>
             </div>
             
-            <div class="pt-8 mt-6 border-t border-slate-100">
+            <!-- Áreas Temáticas -->
+            <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 shadow-sm">
                 <h4 class="font-bold text-slate-800 mb-6 uppercase text-sm tracking-widest" data-i18n="info_scope">Áreas Temáticas:</h4>
-                <ul class="grid sm:grid-cols-2 gap-4 text-base max-w-2xl mx-auto text-left">
-                    <li class="flex items-center gap-3 bg-slate-50 p-4 rounded-xl border border-slate-100 transition-colors hover:border-primary/30"><i class="fas fa-check text-tertiary"></i> <span data-i18n="scope_1">Fisiología Aplicada</span></li>
-                    <li class="flex items-center gap-3 bg-slate-50 p-4 rounded-xl border border-slate-100 transition-colors hover:border-primary/30"><i class="fas fa-check text-tertiary"></i> <span data-i18n="scope_2">Entrenamiento de Fuerza</span></li>
-                    <li class="flex items-center gap-3 bg-slate-50 p-4 rounded-xl border border-slate-100 transition-colors hover:border-primary/30"><i class="fas fa-check text-tertiary"></i> <span data-i18n="scope_3">Ambientes Extremos</span></li>
-                    <li class="flex items-center gap-3 bg-slate-50 p-4 rounded-xl border border-slate-100 transition-colors hover:border-primary/30"><i class="fas fa-check text-tertiary"></i> <span data-i18n="scope_4">Métodos Interválicos</span></li>
+                <ul class="grid sm:grid-cols-2 gap-4 text-base text-left">
+                    <li class="flex items-center gap-3 bg-white p-4 rounded-xl border border-slate-200 transition-colors hover:border-primary/30 shadow-sm"><i class="fas fa-check-circle text-tertiary text-xl"></i> <span data-i18n="scope_1" class="font-medium text-slate-700">Fisiología Aplicada</span></li>
+                    <li class="flex items-center gap-3 bg-white p-4 rounded-xl border border-slate-200 transition-colors hover:border-primary/30 shadow-sm"><i class="fas fa-check-circle text-tertiary text-xl"></i> <span data-i18n="scope_2" class="font-medium text-slate-700">Entrenamiento de Fuerza</span></li>
+                    <li class="flex items-center gap-3 bg-white p-4 rounded-xl border border-slate-200 transition-colors hover:border-primary/30 shadow-sm"><i class="fas fa-check-circle text-tertiary text-xl"></i> <span data-i18n="scope_3" class="font-medium text-slate-700">Ambientes Extremos</span></li>
+                    <li class="flex items-center gap-3 bg-white p-4 rounded-xl border border-slate-200 transition-colors hover:border-primary/30 shadow-sm"><i class="fas fa-check-circle text-tertiary text-xl"></i> <span data-i18n="scope_4" class="font-medium text-slate-700">Métodos Interválicos</span></li>
                 </ul>
             </div>
 
         </div>
     </section>
 
-    <!-- Schedule Section (Centered Layout) -->
+    <!-- Schedule Section -->
     <section id="cronograma" class="py-24 bg-slate-50 relative border-t border-slate-200">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             
@@ -180,7 +179,6 @@
                 </div>
             </div>
 
-            <!-- Centered Timeline Container -->
             <div class="space-y-8 relative">
                 
                 <!-- Event Start -->
@@ -202,43 +200,61 @@
                 </div>
 
                 <!-- Mesa 1 -->
-                <div class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden w-full transition-transform hover:-translate-y-1 duration-300">
-                    <div class="bg-primary p-5 flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-3">
+                <div class="bg-white rounded-2xl shadow-md border border-slate-200 overflow-hidden w-full">
+                    <div class="bg-primary p-5 flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-3 border-b-4 border-accent">
                         <h3 class="text-xl font-bold text-white" data-i18n="mesa1_title">Mesa 1: Producción de conocimiento en ciencias del ejercicio en América Latina</h3>
                         <span class="text-xs font-bold uppercase tracking-wider text-primary bg-white py-1.5 px-4 rounded-full whitespace-nowrap" data-i18n="mesa1_mod">Mod: Michel Milistedt (Brasil)</span>
                     </div>
                     
-                    <div class="divide-y divide-slate-100 p-2 md:p-6">
+                    <div class="divide-y divide-slate-100">
                         <!-- Talk 1.1 -->
-                        <div class="p-4 hover:bg-slate-50 rounded-lg transition-colors flex flex-col md:flex-row gap-4 items-start md:items-center">
-                            <div class="w-20 font-black text-xl text-primary text-center bg-slate-100 py-2 rounded-lg shrink-0">09:30</div>
-                            <div>
-                                <h4 class="font-bold text-slate-800 text-lg mb-1 leading-snug">Aplicaciones de la variabilidad del ritmo cardíaco en la salud y el rendimiento físico.</h4>
-                                <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 text-sm">
-                                    <span class="text-slate-600"><i class="fas fa-user-circle text-slate-400 mr-1"></i> <strong>Marcelo Cano</strong> - Universidad de Chile (Chile)</span>
-                                    <span class="text-slate-500"><i class="fab fa-orcid text-[#A6CE39] mr-1"></i><a href="https://orcid.org/" target="_blank" class="hover:underline">0000-0000-0000-0000</a></span>
+                        <div class="p-6 hover:bg-slate-50 transition-colors">
+                            <div class="flex flex-col md:flex-row gap-4 items-start">
+                                <div class="w-20 font-black text-xl text-primary md:text-center shrink-0 pt-1">09:30</div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 text-lg mb-2">Aplicaciones de la variabilidad del ritmo cardíaco en la salud y el rendimiento físico.</h4>
+                                    <div class="flex flex-col sm:flex-row sm:items-center gap-2 text-sm text-slate-600">
+                                        <div class="flex items-center gap-2">
+                                            <div class="w-7 h-7 rounded-full bg-slate-200 flex items-center justify-center text-slate-400 shrink-0"><i class="fas fa-user text-xs"></i></div>
+                                            <span><strong>Marcelo Cano</strong> - Universidad de Chile (Chile)</span>
+                                        </div>
+                                        <span class="hidden sm:inline text-slate-300">|</span>
+                                        <a href="https://orcid.org/0000-0003-1628-8267" target="_blank" class="text-slate-500 hover:text-tertiary transition-colors inline-flex items-center"><i class="fab fa-orcid mr-1 text-[#A6CE39]"></i> 0000-0003-1628-8267</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <!-- Talk 1.2 -->
-                        <div class="p-4 hover:bg-slate-50 rounded-lg transition-colors flex flex-col md:flex-row gap-4 items-start md:items-center">
-                            <div class="w-20 font-black text-xl text-primary text-center bg-slate-100 py-2 rounded-lg shrink-0">09:45</div>
-                            <div>
-                                <h4 class="font-bold text-slate-800 text-lg mb-1 leading-snug" data-i18n="mesa1_t2">Tema abierto sobre actividad física</h4>
-                                <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 text-sm">
-                                    <span class="text-slate-600"><i class="fas fa-user-circle text-slate-400 mr-1"></i> <strong>Cassiano Ricardo Rech</strong> - UFSC (Brasil)</span>
-                                    <span class="text-slate-500"><i class="fab fa-orcid text-[#A6CE39] mr-1"></i><a href="https://orcid.org/" target="_blank" class="hover:underline">0000-0000-0000-0000</a></span>
+                        <div class="p-6 hover:bg-slate-50 transition-colors">
+                            <div class="flex flex-col md:flex-row gap-4 items-start">
+                                <div class="w-20 font-black text-xl text-primary md:text-center shrink-0 pt-1">09:45</div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 text-lg mb-2" data-i18n="mesa1_t2">Tema abierto sobre actividad física</h4>
+                                    <div class="flex flex-col sm:flex-row sm:items-center gap-2 text-sm text-slate-600">
+                                        <div class="flex items-center gap-2">
+                                            <img src="Cassiano.jpg" alt="Cassiano Ricardo Rech" class="w-7 h-7 rounded-full object-cover border border-slate-200 shrink-0 shadow-sm">
+                                            <span><strong>Cassiano Ricardo Rech</strong> - UFSC (Brasil)</span>
+                                        </div>
+                                        <span class="hidden sm:inline text-slate-300">|</span>
+                                        <a href="https://orcid.org/0000-0002-9647-3448" target="_blank" class="text-slate-500 hover:text-tertiary transition-colors inline-flex items-center"><i class="fab fa-orcid mr-1 text-[#A6CE39]"></i> 0000-0002-9647-3448</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <!-- Talk 1.3 -->
-                        <div class="p-4 hover:bg-slate-50 rounded-lg transition-colors flex flex-col md:flex-row gap-4 items-start md:items-center">
-                            <div class="w-20 font-black text-xl text-primary text-center bg-slate-100 py-2 rounded-lg shrink-0">10:00</div>
-                            <div>
-                                <h4 class="font-bold text-slate-800 text-lg mb-1 leading-snug">Tendencias de investigación sobre actividad física y sedentarismo en adolescentes de américa latina</h4>
-                                <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 text-sm">
-                                    <span class="text-slate-600"><i class="fas fa-user-circle text-slate-400 mr-1"></i> <strong>Sandy Dorian Isla Alcoser</strong> - UNMSM (Perú)</span>
-                                    <span class="text-slate-500"><i class="fab fa-orcid text-[#A6CE39] mr-1"></i><a href="https://orcid.org/" target="_blank" class="hover:underline">0000-0000-0000-0000</a></span>
+                        <div class="p-6 hover:bg-slate-50 transition-colors">
+                            <div class="flex flex-col md:flex-row gap-4 items-start">
+                                <div class="w-20 font-black text-xl text-primary md:text-center shrink-0 pt-1">10:00</div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 text-lg mb-2">Tendencias de investigación sobre actividad física y sedentarismo en adolescentes de américa latina</h4>
+                                    <div class="flex flex-col sm:flex-row sm:items-center gap-2 text-sm text-slate-600">
+                                        <div class="flex items-center gap-2">
+                                            <div class="w-7 h-7 rounded-full bg-slate-200 flex items-center justify-center text-slate-400 shrink-0"><i class="fas fa-user text-xs"></i></div>
+                                            <span><strong>Sandy Dorian Isla Alcoser</strong> - UNMSM (Perú)</span>
+                                        </div>
+                                        <span class="hidden sm:inline text-slate-300">|</span>
+                                        <a href="https://orcid.org/0000-0003-1330-3716" target="_blank" class="text-slate-500 hover:text-tertiary transition-colors inline-flex items-center"><i class="fab fa-orcid mr-1 text-[#A6CE39]"></i> 0000-0003-1330-3716</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -246,43 +262,58 @@
                 </div>
 
                 <!-- Mesa 2 -->
-                <div class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden w-full transition-transform hover:-translate-y-1 duration-300">
-                    <div class="bg-primary p-5 flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-3">
+                <div class="bg-white rounded-2xl shadow-md border border-slate-200 overflow-hidden w-full">
+                    <div class="bg-primary p-5 flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-3 border-b-4 border-secondary">
                         <h3 class="text-xl font-bold text-white" data-i18n="mesa2_title">Mesa 2: Evaluación y entrenamiento de fuerza</h3>
                         <span class="text-xs font-bold uppercase tracking-wider text-primary bg-white py-1.5 px-4 rounded-full whitespace-nowrap" data-i18n="mesa2_mod">Mod: Rodrigo Delevatti (Brasil)</span>
                     </div>
                     
-                    <div class="divide-y divide-slate-100 p-2 md:p-6">
-                        <!-- Talk 2.1 -->
-                        <div class="p-4 hover:bg-slate-50 rounded-lg transition-colors flex flex-col md:flex-row gap-4 items-start md:items-center">
-                            <div class="w-20 font-black text-xl text-primary text-center bg-slate-100 py-2 rounded-lg shrink-0">10:30</div>
-                            <div>
-                                <h4 class="font-bold text-slate-800 text-lg mb-1 leading-snug" data-i18n="mesa2_t1">Treinamento de força no meio aquático: implicações para a saúde e funcionalidade</h4>
-                                <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 text-sm">
-                                    <span class="text-slate-600"><i class="fas fa-user-circle text-slate-400 mr-1"></i> <strong>Cristiane Lima Alberton</strong> - UFPel (Brasil)</span>
-                                    <span class="text-slate-500"><i class="fab fa-orcid text-[#A6CE39] mr-1"></i><a href="https://orcid.org/" target="_blank" class="hover:underline">0000-0000-0000-0000</a></span>
+                    <div class="divide-y divide-slate-100">
+                        <div class="p-6 hover:bg-slate-50 transition-colors">
+                            <div class="flex flex-col md:flex-row gap-4 items-start">
+                                <div class="w-20 font-black text-xl text-primary md:text-center shrink-0 pt-1">10:30</div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 text-lg mb-2" data-i18n="mesa2_t1">Treinamento de força no meio aquático: implicações para a saúde e funcionalidade</h4>
+                                    <div class="flex flex-col sm:flex-row sm:items-center gap-2 text-sm text-slate-600">
+                                        <div class="flex items-center gap-2">
+                                            <img src="Cristiane.png" alt="Cristiane Lima Alberton" class="w-7 h-7 rounded-full object-cover border border-slate-200 shrink-0 shadow-sm">
+                                            <span><strong>Cristiane Lima Alberton</strong> - UFPel (Brasil)</span>
+                                        </div>
+                                        <span class="hidden sm:inline text-slate-300">|</span>
+                                        <a href="https://orcid.org/0000-0002-5258-9406" target="_blank" class="text-slate-500 hover:text-tertiary transition-colors inline-flex items-center"><i class="fab fa-orcid mr-1 text-[#A6CE39]"></i> 0000-0002-5258-9406</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- Talk 2.2 -->
-                        <div class="p-4 hover:bg-slate-50 rounded-lg transition-colors flex flex-col md:flex-row gap-4 items-start md:items-center">
-                            <div class="w-20 font-black text-xl text-primary text-center bg-slate-100 py-2 rounded-lg shrink-0">10:45</div>
-                            <div>
-                                <h4 class="font-bold text-slate-800 text-lg mb-1 leading-snug" data-i18n="mesa2_t2">Treinamento de força muscular e performance de endurance</h4>
-                                <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 text-sm">
-                                    <span class="text-slate-600"><i class="fas fa-user-circle text-slate-400 mr-1"></i> <strong>Camila Coelho Greco</strong> - UNESP (Brasil)</span>
-                                    <span class="text-slate-500"><i class="fab fa-orcid text-[#A6CE39] mr-1"></i><a href="https://orcid.org/" target="_blank" class="hover:underline">0000-0000-0000-0000</a></span>
+                        <div class="p-6 hover:bg-slate-50 transition-colors">
+                            <div class="flex flex-col md:flex-row gap-4 items-start">
+                                <div class="w-20 font-black text-xl text-primary md:text-center shrink-0 pt-1">10:45</div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 text-lg mb-2" data-i18n="mesa2_t2">Treinamento de força muscular e performance de endurance</h4>
+                                    <div class="flex flex-col sm:flex-row sm:items-center gap-2 text-sm text-slate-600">
+                                        <div class="flex items-center gap-2">
+                                            <img src="Camila greco.png" alt="Camila Coelho Greco" class="w-7 h-7 rounded-full object-cover border border-slate-200 shrink-0 shadow-sm">
+                                            <span><strong>Camila Coelho Greco</strong> - UNESP (Brasil)</span>
+                                        </div>
+                                        <span class="hidden sm:inline text-slate-300">|</span>
+                                        <a href="https://orcid.org/0000-0002-7611-9759" target="_blank" class="text-slate-500 hover:text-tertiary transition-colors inline-flex items-center"><i class="fab fa-orcid mr-1 text-[#A6CE39]"></i> 0000-0002-7611-9759</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- Talk 2.3 -->
-                        <div class="p-4 hover:bg-slate-50 rounded-lg transition-colors flex flex-col md:flex-row gap-4 items-start md:items-center">
-                            <div class="w-20 font-black text-xl text-primary text-center bg-slate-100 py-2 rounded-lg shrink-0">11:00</div>
-                            <div>
-                                <h4 class="font-bold text-slate-800 text-lg mb-1 leading-snug">Entrenamiento mediante ejercicios con salto: Evidencia científica y brechas de conocimiento.</h4>
-                                <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 text-sm">
-                                    <span class="text-slate-600"><i class="fas fa-user-circle text-slate-400 mr-1"></i> <strong>Rodrigo Ramirez-Campillo</strong> - (Chile)</span>
-                                    <span class="text-slate-500"><i class="fab fa-orcid text-[#A6CE39] mr-1"></i><a href="https://orcid.org/" target="_blank" class="hover:underline">0000-0000-0000-0000</a></span>
+                        <div class="p-6 hover:bg-slate-50 transition-colors">
+                            <div class="flex flex-col md:flex-row gap-4 items-start">
+                                <div class="w-20 font-black text-xl text-primary md:text-center shrink-0 pt-1">11:00</div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 text-lg mb-2">Entrenamiento mediante ejercicios con salto: Evidencia científica y brechas de conocimiento.</h4>
+                                    <div class="flex flex-col sm:flex-row sm:items-center gap-2 text-sm text-slate-600">
+                                        <div class="flex items-center gap-2">
+                                            <img src="Rodrigo.png" alt="Rodrigo Ramirez-Campillo" class="w-7 h-7 rounded-full object-cover border border-slate-200 shrink-0 shadow-sm">
+                                            <span><strong>Rodrigo Ramirez-Campillo</strong> - (Chile)</span>
+                                        </div>
+                                        <span class="hidden sm:inline text-slate-300">|</span>
+                                        <a href="https://orcid.org/0000-0003-2035-3279" target="_blank" class="text-slate-500 hover:text-tertiary transition-colors inline-flex items-center"><i class="fab fa-orcid mr-1 text-[#A6CE39]"></i> 0000-0003-2035-3279</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -290,43 +321,58 @@
                 </div>
 
                 <!-- Mesa 3 -->
-                <div class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden w-full transition-transform hover:-translate-y-1 duration-300">
-                    <div class="bg-primary p-5 flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-3">
+                <div class="bg-white rounded-2xl shadow-md border border-slate-200 overflow-hidden w-full">
+                    <div class="bg-primary p-5 flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-3 border-b-4 border-tertiary">
                         <h3 class="text-xl font-bold text-white" data-i18n="mesa3_title">Mesa 3: Ejercicio en ambientes extremos</h3>
                         <span class="text-xs font-bold uppercase tracking-wider text-primary bg-white py-1.5 px-4 rounded-full whitespace-nowrap" data-i18n="mesa3_mod">Mod: Hugo Aceituno Pinto (Chile)</span>
                     </div>
                     
-                    <div class="divide-y divide-slate-100 p-2 md:p-6">
-                        <!-- Talk 3.1 -->
-                        <div class="p-4 hover:bg-slate-50 rounded-lg transition-colors flex flex-col md:flex-row gap-4 items-start md:items-center">
-                            <div class="w-20 font-black text-xl text-primary text-center bg-slate-100 py-2 rounded-lg shrink-0">11:30</div>
-                            <div>
-                                <h4 class="font-bold text-slate-800 text-lg mb-1 leading-snug">Mujeres desafiando la altura: fisiología, ejercicio y adaptación a ambiente extremo</h4>
-                                <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 text-sm">
-                                    <span class="text-slate-600"><i class="fas fa-user-circle text-slate-400 mr-1"></i> <strong>Morin Lang</strong> - Universidad de Chile (Chile)</span>
-                                    <span class="text-slate-500"><i class="fab fa-orcid text-[#A6CE39] mr-1"></i><a href="https://orcid.org/" target="_blank" class="hover:underline">0000-0000-0000-0000</a></span>
+                    <div class="divide-y divide-slate-100">
+                        <div class="p-6 hover:bg-slate-50 transition-colors">
+                            <div class="flex flex-col md:flex-row gap-4 items-start">
+                                <div class="w-20 font-black text-xl text-primary md:text-center shrink-0 pt-1">11:30</div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 text-lg mb-2">Mujeres desafiando la altura: fisiología, ejercicio y adaptación a ambiente extremo</h4>
+                                    <div class="flex flex-col sm:flex-row sm:items-center gap-2 text-sm text-slate-600">
+                                        <div class="flex items-center gap-2">
+                                            <img src="Morin.png" alt="Morin Lang" class="w-7 h-7 rounded-full object-cover border border-slate-200 shrink-0 shadow-sm">
+                                            <span><strong>Morin Lang</strong> - Universidad de Chile (Chile)</span>
+                                        </div>
+                                        <span class="hidden sm:inline text-slate-300">|</span>
+                                        <a href="https://orcid.org/0000-0002-8465-5471" target="_blank" class="text-slate-500 hover:text-tertiary transition-colors inline-flex items-center"><i class="fab fa-orcid mr-1 text-[#A6CE39]"></i> 0000-0002-8465-5471</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- Talk 3.2 -->
-                        <div class="p-4 hover:bg-slate-50 rounded-lg transition-colors flex flex-col md:flex-row gap-4 items-start md:items-center">
-                            <div class="w-20 font-black text-xl text-primary text-center bg-slate-100 py-2 rounded-lg shrink-0">11:45</div>
-                            <div>
-                                <h4 class="font-bold text-slate-800 text-lg mb-1 leading-snug" data-i18n="mesa3_t2">Exercício físico e poluição do ar: o desafio dos grandes centros urbanos.</h4>
-                                <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 text-sm">
-                                    <span class="text-slate-600"><i class="fas fa-user-circle text-slate-400 mr-1"></i> <strong>Ramon Cruz</strong> - UFSC (Brasil)</span>
-                                    <span class="text-slate-500"><i class="fab fa-orcid text-[#A6CE39] mr-1"></i><a href="https://orcid.org/" target="_blank" class="hover:underline">0000-0000-0000-0000</a></span>
+                        <div class="p-6 hover:bg-slate-50 transition-colors">
+                            <div class="flex flex-col md:flex-row gap-4 items-start">
+                                <div class="w-20 font-black text-xl text-primary md:text-center shrink-0 pt-1">11:45</div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 text-lg mb-2" data-i18n="mesa3_t2">Exercício físico e poluição do ar: o desafio dos grandes centros urbanos.</h4>
+                                    <div class="flex flex-col sm:flex-row sm:items-center gap-2 text-sm text-slate-600">
+                                        <div class="flex items-center gap-2">
+                                            <img src="Ramon.png" alt="Ramon Cruz" class="w-7 h-7 rounded-full object-cover border border-slate-200 shrink-0 shadow-sm">
+                                            <span><strong>Ramon Cruz</strong> - UFSC (Brasil)</span>
+                                        </div>
+                                        <span class="hidden sm:inline text-slate-300">|</span>
+                                        <a href="https://orcid.org/0000-0002-1308-5993" target="_blank" class="text-slate-500 hover:text-tertiary transition-colors inline-flex items-center"><i class="fab fa-orcid mr-1 text-[#A6CE39]"></i> 0000-0002-1308-5993</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- Talk 3.3 -->
-                        <div class="p-4 hover:bg-slate-50 rounded-lg transition-colors flex flex-col md:flex-row gap-4 items-start md:items-center">
-                            <div class="w-20 font-black text-xl text-primary text-center bg-slate-100 py-2 rounded-lg shrink-0">12:00</div>
-                            <div>
-                                <h4 class="font-bold text-slate-800 text-lg mb-1 leading-snug">Electrocardiographic Profile and sex related differences in young adults living at moderate high altitude</h4>
-                                <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 text-sm">
-                                    <span class="text-slate-600"><i class="fas fa-user-circle text-slate-400 mr-1"></i> <strong>Wilmer Danilo Esparza Yánez</strong> - UDLA (Ecuador)</span>
-                                    <span class="text-slate-500"><i class="fab fa-orcid text-[#A6CE39] mr-1"></i><a href="https://orcid.org/" target="_blank" class="hover:underline">0000-0000-0000-0000</a></span>
+                        <div class="p-6 hover:bg-slate-50 transition-colors">
+                            <div class="flex flex-col md:flex-row gap-4 items-start">
+                                <div class="w-20 font-black text-xl text-primary md:text-center shrink-0 pt-1">12:00</div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 text-lg mb-2">Electrocardiographic Profile and sex related differences in young adults living at moderate high altitude</h4>
+                                    <div class="flex flex-col sm:flex-row sm:items-center gap-2 text-sm text-slate-600">
+                                        <div class="flex items-center gap-2">
+                                            <div class="w-7 h-7 rounded-full bg-slate-200 flex items-center justify-center text-slate-400 shrink-0"><i class="fas fa-user text-xs"></i></div>
+                                            <span><strong>Wilmer Danilo Esparza Yánez</strong> - UDLA (Ecuador)</span>
+                                        </div>
+                                        <span class="hidden sm:inline text-slate-300">|</span>
+                                        <a href="https://orcid.org/0000-0003-3504-9990" target="_blank" class="text-slate-500 hover:text-tertiary transition-colors inline-flex items-center"><i class="fab fa-orcid mr-1 text-[#A6CE39]"></i> 0000-0003-3504-9990</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -334,43 +380,58 @@
                 </div>
 
                 <!-- Mesa 4 -->
-                <div class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden w-full transition-transform hover:-translate-y-1 duration-300">
-                    <div class="bg-primary p-5 flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-3">
+                <div class="bg-white rounded-2xl shadow-md border border-slate-200 overflow-hidden w-full">
+                    <div class="bg-primary p-5 flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-3 border-b-4 border-primary">
                         <h3 class="text-xl font-bold text-white" data-i18n="mesa4_title">Mesa 4: Entrenamientos de intervalos en distintos contextos</h3>
                         <span class="text-xs font-bold uppercase tracking-wider text-primary bg-white py-1.5 px-4 rounded-full whitespace-nowrap" data-i18n="mesa4_mod">Mod: Tiago Turnes (Brasil)</span>
                     </div>
                     
-                    <div class="divide-y divide-slate-100 p-2 md:p-6">
-                        <!-- Talk 4.1 -->
-                        <div class="p-4 hover:bg-slate-50 rounded-lg transition-colors flex flex-col md:flex-row gap-4 items-start md:items-center">
-                            <div class="w-20 font-black text-xl text-primary text-center bg-slate-100 py-2 rounded-lg shrink-0">12:30</div>
-                            <div>
-                                <h4 class="font-bold text-slate-800 text-lg mb-1 leading-snug">Determinantes de la carga como modificadores del efecto del entrenamiento</h4>
-                                <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 text-sm">
-                                    <span class="text-slate-600"><i class="fas fa-user-circle text-slate-400 mr-1"></i> <strong>Edgardo Opazo</strong> - Universidad de Chile (Chile)</span>
-                                    <span class="text-slate-500"><i class="fab fa-orcid text-[#A6CE39] mr-1"></i><a href="https://orcid.org/" target="_blank" class="hover:underline">0000-0000-0000-0000</a></span>
+                    <div class="divide-y divide-slate-100">
+                        <div class="p-6 hover:bg-slate-50 transition-colors">
+                            <div class="flex flex-col md:flex-row gap-4 items-start">
+                                <div class="w-20 font-black text-xl text-primary md:text-center shrink-0 pt-1">12:30</div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 text-lg mb-2">Determinantes de la carga como modificadores del efecto del entrenamiento</h4>
+                                    <div class="flex flex-col sm:flex-row sm:items-center gap-2 text-sm text-slate-600">
+                                        <div class="flex items-center gap-2">
+                                            <img src="Edgardo.png" alt="Edgardo Opazo" class="w-7 h-7 rounded-full object-cover border border-slate-200 shrink-0 shadow-sm">
+                                            <span><strong>Edgardo Opazo</strong> - Universidad de Chile (Chile)</span>
+                                        </div>
+                                        <span class="hidden sm:inline text-slate-300">|</span>
+                                        <a href="https://orcid.org/0000-0003-0057-5333" target="_blank" class="text-slate-500 hover:text-tertiary transition-colors inline-flex items-center"><i class="fab fa-orcid mr-1 text-[#A6CE39]"></i> 0000-0003-0057-5333</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- Talk 4.2 -->
-                        <div class="p-4 hover:bg-slate-50 rounded-lg transition-colors flex flex-col md:flex-row gap-4 items-start md:items-center">
-                            <div class="w-20 font-black text-xl text-primary text-center bg-slate-100 py-2 rounded-lg shrink-0">12:45</div>
-                            <div>
-                                <h4 class="font-bold text-slate-800 text-lg mb-1 leading-snug">Entrenamiento de intervalos en subida: respuestas agudas del VO2 y la frecuencia cardíaca.</h4>
-                                <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 text-sm">
-                                    <span class="text-slate-600"><i class="fas fa-user-circle text-slate-400 mr-1"></i> <strong>Ricardo Dantas de Lucas</strong> - UFSC (Brasil)</span>
-                                    <span class="text-slate-500"><i class="fab fa-orcid text-[#A6CE39] mr-1"></i><a href="https://orcid.org/" target="_blank" class="hover:underline">0000-0000-0000-0000</a></span>
+                        <div class="p-6 hover:bg-slate-50 transition-colors">
+                            <div class="flex flex-col md:flex-row gap-4 items-start">
+                                <div class="w-20 font-black text-xl text-primary md:text-center shrink-0 pt-1">12:45</div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 text-lg mb-2">Entrenamiento de intervalos en subida: respuestas agudas del VO2 y la frecuencia cardíaca.</h4>
+                                    <div class="flex flex-col sm:flex-row sm:items-center gap-2 text-sm text-slate-600">
+                                        <div class="flex items-center gap-2">
+                                            <img src="Ricardo.png" alt="Ricardo Dantas de Lucas" class="w-7 h-7 rounded-full object-cover border border-slate-200 shrink-0 shadow-sm">
+                                            <span><strong>Ricardo Dantas de Lucas</strong> - UFSC (Brasil)</span>
+                                        </div>
+                                        <span class="hidden sm:inline text-slate-300">|</span>
+                                        <a href="https://orcid.org/0000-0002-8566-3086" target="_blank" class="text-slate-500 hover:text-tertiary transition-colors inline-flex items-center"><i class="fab fa-orcid mr-1 text-[#A6CE39]"></i> 0000-0002-8566-3086</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- Talk 4.3 -->
-                        <div class="p-4 hover:bg-slate-50 rounded-lg transition-colors flex flex-col md:flex-row gap-4 items-start md:items-center">
-                            <div class="w-20 font-black text-xl text-primary text-center bg-slate-100 py-2 rounded-lg shrink-0">13:00</div>
-                            <div>
-                                <h4 class="font-bold text-slate-800 text-lg mb-1 leading-snug">Efectos cardiometabólicos del HIF</h4>
-                                <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 text-sm">
-                                    <span class="text-slate-600"><i class="fas fa-user-circle text-slate-400 mr-1"></i> <strong>Stefano Benítez</strong> - Univ. de la República (Uruguay)</span>
-                                    <span class="text-slate-500"><i class="fab fa-orcid text-[#A6CE39] mr-1"></i><a href="https://orcid.org/" target="_blank" class="hover:underline">0000-0000-0000-0000</a></span>
+                        <div class="p-6 hover:bg-slate-50 transition-colors">
+                            <div class="flex flex-col md:flex-row gap-4 items-start">
+                                <div class="w-20 font-black text-xl text-primary md:text-center shrink-0 pt-1">13:00</div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 text-lg mb-2">Efectos cardiometabólicos del HIF</h4>
+                                    <div class="flex flex-col sm:flex-row sm:items-center gap-2 text-sm text-slate-600">
+                                        <div class="flex items-center gap-2">
+                                            <div class="w-7 h-7 rounded-full bg-slate-200 flex items-center justify-center text-slate-400 shrink-0"><i class="fas fa-user text-xs"></i></div>
+                                            <span><strong>Stefano Benítez</strong> - Univ. de la República (Uruguay)</span>
+                                        </div>
+                                        <span class="hidden sm:inline text-slate-300">|</span>
+                                        <a href="https://orcid.org/0000-0001-8243-2082" target="_blank" class="text-slate-500 hover:text-tertiary transition-colors inline-flex items-center"><i class="fab fa-orcid mr-1 text-[#A6CE39]"></i> 0000-0001-8243-2082</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -378,7 +439,7 @@
                 </div>
 
                 <!-- Event Close -->
-                <div class="bg-slate-800 text-white rounded-xl shadow-md p-5 flex items-center justify-center gap-4 text-center max-w-sm mx-auto mt-12">
+                <div class="bg-slate-800 text-white rounded-xl shadow-md p-5 flex items-center justify-center gap-4 text-center max-w-sm mx-auto mt-8">
                     <i class="fas fa-door-closed text-2xl text-slate-400"></i>
                     <div>
                         <h3 class="text-lg font-bold" data-i18n="event_close">Cierre del Evento</h3>
@@ -398,7 +459,7 @@
                 No pierdas la oportunidad de actualizarte con los mayores especialistas de América Latina. Emisión de certificado de participación.
             </p>
             
-            <a href="#" class="inline-flex items-center justify-center gap-3 px-10 py-4 bg-primary text-white rounded-full font-bold text-xl hover:bg-primary/90 transition-all transform hover:-translate-y-1 shadow-lg">
+            <a href="https://inscricoes.ufsc.br/simposio-ejercicio-fisico" target="_blank" class="inline-flex items-center justify-center gap-3 px-10 py-4 bg-primary text-white rounded-full font-bold text-xl hover:bg-primary/90 transition-all transform hover:-translate-y-1 shadow-lg">
                 <i class="fas fa-ticket-alt"></i> <span data-i18n="reg_btn">Inscribirse Ahora</span>
             </a>
         </div>
@@ -409,7 +470,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="flex items-center gap-4">
                 <div class="bg-white p-1 rounded-full">
-                    <img src="image_209678.jpeg" alt="Logo Simposio" class="h-10 w-10 object-contain rounded-full">
+                    <img src="image_209678.jpg" alt="Logo Simposio" class="h-10 w-10 object-contain rounded-full" onerror="this.src='https://placehold.co/100x100/0B2341/FFFFFF?text=SL'">
                 </div>
                 <div>
                     <p class="font-bold text-white text-lg leading-tight">Simposio Latinoamericano</p>
@@ -447,7 +508,6 @@
                 scope_2: "Entrenamiento de Fuerza",
                 scope_3: "Ambientes Extremos",
                 scope_4: "Métodos Interválicos",
-                placeholder_img: "Espacio para Foto del Evento",
                 schedule_title: "Cronograma Oficial",
                 schedule_subtitle: "29 de Agosto | Horario oficial: GMT-3",
                 event_start: "Inicio del Evento",
@@ -491,7 +551,6 @@
                 scope_2: "Treinamento de Força",
                 scope_3: "Ambientes Extremos",
                 scope_4: "Métodos Intervalados",
-                placeholder_img: "Espaço para Foto do Evento",
                 schedule_title: "Cronograma Oficial",
                 schedule_subtitle: "29 de Agosto | Horário oficial: GMT-3",
                 event_start: "Início do Evento",
