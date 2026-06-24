@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <script>
         tailwind.config = {
@@ -50,6 +52,7 @@
                     <a href="#hero" class="text-slate-600 hover:text-primary font-semibold transition-colors text-sm uppercase tracking-wide" data-i18n="nav_inicio">Inicio</a>
                     <a href="#info" class="text-slate-600 hover:text-primary font-semibold transition-colors text-sm uppercase tracking-wide" data-i18n="nav_info">Sobre el Evento</a>
                     <a href="#cronograma" class="text-slate-600 hover:text-primary font-semibold transition-colors text-sm uppercase tracking-wide" data-i18n="nav_cronograma">Cronograma</a>
+                    <a href="#faq" class="text-slate-600 hover:text-primary font-semibold transition-colors text-sm uppercase tracking-wide" data-i18n="nav_faq">FAQ</a>
                     
                     <!-- Language Switcher -->
                     <div class="flex bg-slate-100 rounded-lg p-1 border border-slate-200">
@@ -79,6 +82,7 @@
                 <a href="#hero" class="block px-3 py-3 text-base font-semibold text-slate-700 hover:bg-slate-50 hover:text-primary rounded-lg" data-i18n="nav_inicio">Inicio</a>
                 <a href="#info" class="block px-3 py-3 text-base font-semibold text-slate-700 hover:bg-slate-50 hover:text-primary rounded-lg" data-i18n="nav_info">Sobre el Evento</a>
                 <a href="#cronograma" class="block px-3 py-3 text-base font-semibold text-slate-700 hover:bg-slate-50 hover:text-primary rounded-lg" data-i18n="nav_cronograma">Cronograma</a>
+                <a href="#faq" class="block px-3 py-3 text-base font-semibold text-slate-700 hover:bg-slate-50 hover:text-primary rounded-lg" data-i18n="nav_faq">FAQ</a>
                 <a href="https://inscricoes.ufsc.br/simposio-ejercicio-fisico" target="_blank" class="mt-4 w-full bg-primary text-white px-5 py-3 rounded-xl font-bold shadow-md block" data-i18n="nav_inscripcion">Inscripciones</a>
             </div>
         </div>
@@ -93,7 +97,7 @@
             <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
                 
                 <!-- Hero Image/Logo -->
-                <div class="w-full lg:w-5/12 flex justify-center order-2 lg:order-1">
+                <div class="w-full lg:w-5/12 flex justify-center order-2 lg:order-1" data-aos="fade-left" data-aos-duration="1000">
                     <div class="relative w-64 h-64 md:w-80 md:h-80 lg:w-[400px] lg:h-[400px] rounded-full bg-white shadow-2xl p-4 border border-slate-100 transform hover:scale-105 transition-transform duration-700">
                         <div class="absolute -inset-3 rounded-full border-[3px] border-transparent border-t-secondary border-r-tertiary border-b-primaryLight border-l-accent opacity-50 animate-[spin_30s_linear_infinite]"></div>
                         <img src="image_209678.jpeg" alt="Logo do Simpósio" class="w-full h-full object-cover rounded-full shadow-inner" onerror="this.src='https://placehold.co/400x400/0B2341/FFFFFF?text=Simposio'">
@@ -101,7 +105,7 @@
                 </div>
 
                 <!-- Text Content -->
-                <div class="w-full lg:w-7/12 text-center lg:text-left order-1 lg:order-2">
+                <div class="w-full lg:w-7/12 text-center lg:text-left order-1 lg:order-2" data-aos="fade-right" data-aos-duration="1000">
                     <div class="inline-flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 px-4 sm:px-5 py-2 sm:py-2 rounded-xl sm:rounded-full bg-white text-primary font-bold text-xs sm:text-sm mb-6 border border-slate-200 shadow-sm uppercase tracking-wider text-center">
                         <div class="flex items-center gap-2"><i class="far fa-calendar-alt"></i> <span>29 de Agosto</span></div>
                         <span class="hidden sm:inline text-slate-300">|</span>
@@ -118,6 +122,29 @@
                     <p class="mt-6 text-lg md:text-xl text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed" data-i18n="hero_subtitle">
                         Únete a los principales investigadores y profesionales de América Latina para debatir las últimas evidencias en ciencias del deporte y la salud.
                     </p>
+
+                    <!-- Countdown Timer -->
+                    <div class="mt-8 flex justify-center lg:justify-start gap-3 sm:gap-4 text-primary" id="countdown">
+                        <div class="bg-white p-2 sm:p-3 rounded-xl border border-slate-200 shadow-sm text-center w-16 sm:w-20">
+                            <span id="cd-days" class="block text-xl sm:text-2xl font-black">00</span>
+                            <span class="text-[10px] sm:text-xs uppercase font-bold text-slate-500" data-i18n="cd_days">Días</span>
+                        </div>
+                        <div class="text-2xl font-bold text-slate-300 pt-2">:</div>
+                        <div class="bg-white p-2 sm:p-3 rounded-xl border border-slate-200 shadow-sm text-center w-16 sm:w-20">
+                            <span id="cd-hours" class="block text-xl sm:text-2xl font-black">00</span>
+                            <span class="text-[10px] sm:text-xs uppercase font-bold text-slate-500" data-i18n="cd_hours">Horas</span>
+                        </div>
+                        <div class="text-2xl font-bold text-slate-300 pt-2">:</div>
+                        <div class="bg-white p-2 sm:p-3 rounded-xl border border-slate-200 shadow-sm text-center w-16 sm:w-20">
+                            <span id="cd-mins" class="block text-xl sm:text-2xl font-black">00</span>
+                            <span class="text-[10px] sm:text-xs uppercase font-bold text-slate-500" data-i18n="cd_mins">Min</span>
+                        </div>
+                        <div class="text-2xl font-bold text-slate-300 pt-2">:</div>
+                        <div class="bg-white p-2 sm:p-3 rounded-xl border border-slate-200 shadow-sm text-center w-16 sm:w-20">
+                            <span id="cd-secs" class="block text-xl sm:text-2xl font-black text-secondary">00</span>
+                            <span class="text-[10px] sm:text-xs uppercase font-bold text-slate-500" data-i18n="cd_secs">Seg</span>
+                        </div>
+                    </div>
                     
                     <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                         <a href="https://inscricoes.ufsc.br/simposio-ejercicio-fisico" target="_blank" class="px-8 py-4 bg-primary text-white rounded-full font-bold text-lg hover:bg-primary/90 transition-all transform hover:-translate-y-1 shadow-lg flex items-center justify-center gap-2">
@@ -133,9 +160,23 @@
         </div>
     </section>
 
+    <!-- Location / Online Banner -->
+    <section class="py-10 bg-primaryLight text-white relative overflow-hidden" data-aos="fade-up">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center justify-center gap-6 text-center md:text-left">
+            <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center text-3xl shrink-0 shadow-inner">
+                <i class="fas fa-laptop-house text-white"></i>
+            </div>
+            <div>
+                <h3 class="text-2xl font-black mb-1 uppercase tracking-wider" data-i18n="loc_title">Transmisión 100% Online</h3>
+                <p class="text-white/90 text-lg" data-i18n="loc_desc">Asiste y participa desde cualquier lugar del mundo. Rompiendo fronteras por la ciencia.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Info Section (Sobre el Evento - Centered & Clean) -->
     <section id="info" class="py-24 bg-white relative border-t border-slate-100">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
             
             <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-slate-100 text-slate-600 font-bold text-sm mb-6 uppercase tracking-wider">
                 <i class="fas fa-info-circle text-primary"></i>
@@ -157,13 +198,13 @@
             </div>
             
             <!-- Áreas Temáticas -->
-            <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 shadow-sm">
+            <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 shadow-sm" data-aos="zoom-in" data-aos-delay="200">
                 <h4 class="font-bold text-slate-800 mb-6 uppercase text-sm tracking-widest" data-i18n="info_scope">Áreas Temáticas:</h4>
                 <ul class="grid sm:grid-cols-2 gap-4 text-base text-left">
-                    <li class="flex items-center gap-3 bg-white p-4 rounded-xl border border-slate-200 transition-colors hover:border-primary/30 shadow-sm"><i class="fas fa-check-circle text-tertiary text-xl"></i> <span data-i18n="scope_1" class="font-medium text-slate-700">Fisiología Aplicada</span></li>
-                    <li class="flex items-center gap-3 bg-white p-4 rounded-xl border border-slate-200 transition-colors hover:border-primary/30 shadow-sm"><i class="fas fa-check-circle text-tertiary text-xl"></i> <span data-i18n="scope_2" class="font-medium text-slate-700">Entrenamiento de Fuerza</span></li>
-                    <li class="flex items-center gap-3 bg-white p-4 rounded-xl border border-slate-200 transition-colors hover:border-primary/30 shadow-sm"><i class="fas fa-check-circle text-tertiary text-xl"></i> <span data-i18n="scope_3" class="font-medium text-slate-700">Ambientes Extremos</span></li>
-                    <li class="flex items-center gap-3 bg-white p-4 rounded-xl border border-slate-200 transition-colors hover:border-primary/30 shadow-sm"><i class="fas fa-check-circle text-tertiary text-xl"></i> <span data-i18n="scope_4" class="font-medium text-slate-700">Métodos Interválicos</span></li>
+                    <li class="flex items-center gap-3 bg-white p-4 rounded-xl border border-slate-200 transition-colors hover:border-primary/30 shadow-sm hover:-translate-y-1 transform duration-300"><i class="fas fa-check-circle text-tertiary text-xl"></i> <span data-i18n="scope_1" class="font-medium text-slate-700">Fisiología Aplicada</span></li>
+                    <li class="flex items-center gap-3 bg-white p-4 rounded-xl border border-slate-200 transition-colors hover:border-primary/30 shadow-sm hover:-translate-y-1 transform duration-300"><i class="fas fa-check-circle text-tertiary text-xl"></i> <span data-i18n="scope_2" class="font-medium text-slate-700">Entrenamiento de Fuerza</span></li>
+                    <li class="flex items-center gap-3 bg-white p-4 rounded-xl border border-slate-200 transition-colors hover:border-primary/30 shadow-sm hover:-translate-y-1 transform duration-300"><i class="fas fa-check-circle text-tertiary text-xl"></i> <span data-i18n="scope_3" class="font-medium text-slate-700">Ambientes Extremos</span></li>
+                    <li class="flex items-center gap-3 bg-white p-4 rounded-xl border border-slate-200 transition-colors hover:border-primary/30 shadow-sm hover:-translate-y-1 transform duration-300"><i class="fas fa-check-circle text-tertiary text-xl"></i> <span data-i18n="scope_4" class="font-medium text-slate-700">Métodos Interválicos</span></li>
                 </ul>
             </div>
 
@@ -174,7 +215,7 @@
     <section id="cronograma" class="py-24 bg-slate-50 relative border-t border-slate-200">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             
-            <div class="text-center mb-16">
+            <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-3xl md:text-4xl font-black text-primary mb-4 tracking-tight uppercase" data-i18n="schedule_title">Cronograma Oficial</h2>
                 <div class="inline-flex flex-col sm:flex-row items-center justify-center gap-2 bg-white px-5 py-2.5 sm:py-2 rounded-xl sm:rounded-full shadow-sm border border-slate-200 text-slate-600 font-semibold text-sm sm:text-base text-center">
                     <i class="far fa-calendar text-primary hidden sm:inline"></i> 
@@ -185,7 +226,7 @@
             <div class="space-y-8 relative">
                 
                 <!-- Event Start -->
-                <div class="bg-primary text-white rounded-xl shadow-md p-5 flex items-center justify-center gap-4 text-center max-w-sm mx-auto">
+                <div class="bg-primary text-white rounded-xl shadow-md p-5 flex items-center justify-center gap-4 text-center max-w-sm mx-auto" data-aos="fade-up">
                     <i class="fas fa-flag text-2xl text-accent"></i>
                     <div>
                         <h3 class="text-lg font-bold" data-i18n="event_start">Inicio del Evento</h3>
@@ -194,7 +235,7 @@
                 </div>
 
                 <!-- Welcome -->
-                <div class="bg-white border border-slate-200 rounded-xl shadow-sm p-5 flex items-center justify-center gap-4 text-center max-w-sm mx-auto">
+                <div class="bg-white border border-slate-200 rounded-xl shadow-sm p-5 flex items-center justify-center gap-4 text-center max-w-sm mx-auto" data-aos="fade-up">
                     <i class="fas fa-handshake text-2xl text-primary"></i>
                     <div>
                         <h3 class="text-lg font-bold text-slate-800" data-i18n="event_welcome">Bienvenida</h3>
@@ -203,7 +244,7 @@
                 </div>
 
                 <!-- Mesa 1 -->
-                <div class="bg-white rounded-2xl shadow-md border border-slate-200 overflow-hidden w-full">
+                <div class="bg-white rounded-2xl shadow-md border border-slate-200 overflow-hidden w-full" data-aos="fade-up">
                     <div class="bg-primary p-5 flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-3 border-b-4 border-accent">
                         <h3 class="text-xl font-bold text-white" data-i18n="mesa1_title">Mesa 1: Producción de conocimiento en ciencias del ejercicio en América Latina</h3>
                         <span class="text-xs font-bold uppercase tracking-wider text-primary bg-white py-1.5 px-4 rounded-full whitespace-nowrap" data-i18n="mesa1_mod">Mod: Michel Milistedt (Brasil)</span>
@@ -235,7 +276,7 @@
                                     <h4 class="font-bold text-slate-800 text-lg mb-2" data-i18n="mesa1_t2">Tema abierto sobre actividad física</h4>
                                     <div class="flex flex-col sm:flex-row sm:items-center gap-2 text-sm text-slate-600">
                                         <div class="flex items-center gap-2">
-                                            <img src="Cassiano.png" alt="Cassiano Ricardo Rech" class="w-7 h-7 rounded-full object-cover object-top border border-slate-200 shrink-0 shadow-sm">
+                                            <img src="Cassiano.jpg" alt="Cassiano Ricardo Rech" class="w-7 h-7 rounded-full object-cover object-top border border-slate-200 shrink-0 shadow-sm">
                                             <span><strong>Cassiano Ricardo Rech</strong> - UFSC (Brasil)</span>
                                         </div>
                                         <span class="hidden sm:inline text-slate-300">|</span>
@@ -252,7 +293,7 @@
                                     <h4 class="font-bold text-slate-800 text-lg mb-2" data-i18n="mesa1_t3">Tendencias de investigación sobre actividad física y sedentarismo en adolescentes de américa latina</h4>
                                     <div class="flex flex-col sm:flex-row sm:items-center gap-2 text-sm text-slate-600">
                                         <div class="flex items-center gap-2">
-                                            <img src="Sandy.jpeg" alt="Sandy Dorian Isla Alcoser" class="w-7 h-7 rounded-full object-cover border border-slate-200 shrink-0 shadow-sm">
+                                            <div class="w-7 h-7 rounded-full bg-slate-200 flex items-center justify-center text-slate-400 shrink-0"><i class="fas fa-user text-xs"></i></div>
                                             <span><strong>Sandy Dorian Isla Alcoser</strong> - UNMSM (Perú)</span>
                                         </div>
                                         <span class="hidden sm:inline text-slate-300">|</span>
@@ -265,7 +306,7 @@
                 </div>
 
                 <!-- Mesa 2 -->
-                <div class="bg-white rounded-2xl shadow-md border border-slate-200 overflow-hidden w-full">
+                <div class="bg-white rounded-2xl shadow-md border border-slate-200 overflow-hidden w-full" data-aos="fade-up">
                     <div class="bg-primary p-5 flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-3 border-b-4 border-secondary">
                         <h3 class="text-xl font-bold text-white" data-i18n="mesa2_title">Mesa 2: Evaluación y entrenamiento de fuerza</h3>
                         <span class="text-xs font-bold uppercase tracking-wider text-primary bg-white py-1.5 px-4 rounded-full whitespace-nowrap" data-i18n="mesa2_mod">Mod: Rodrigo Delevatti (Brasil)</span>
@@ -324,7 +365,7 @@
                 </div>
 
                 <!-- Mesa 3 -->
-                <div class="bg-white rounded-2xl shadow-md border border-slate-200 overflow-hidden w-full">
+                <div class="bg-white rounded-2xl shadow-md border border-slate-200 overflow-hidden w-full" data-aos="fade-up">
                     <div class="bg-primary p-5 flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-3 border-b-4 border-tertiary">
                         <h3 class="text-xl font-bold text-white" data-i18n="mesa3_title">Mesa 3: Ejercicio en ambientes extremos</h3>
                         <span class="text-xs font-bold uppercase tracking-wider text-primary bg-white py-1.5 px-4 rounded-full whitespace-nowrap" data-i18n="mesa3_mod">Mod: Hugo Aceituno Pinto (Chile)</span>
@@ -383,7 +424,7 @@
                 </div>
 
                 <!-- Mesa 4 -->
-                <div class="bg-white rounded-2xl shadow-md border border-slate-200 overflow-hidden w-full">
+                <div class="bg-white rounded-2xl shadow-md border border-slate-200 overflow-hidden w-full" data-aos="fade-up">
                     <div class="bg-primary p-5 flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-3 border-b-4 border-primaryLight">
                         <h3 class="text-xl font-bold text-white" data-i18n="mesa4_title">Mesa 4: Entrenamientos de intervalos en distintos contextos</h3>
                         <span class="text-xs font-bold uppercase tracking-wider text-primary bg-white py-1.5 px-4 rounded-full whitespace-nowrap" data-i18n="mesa4_mod">Mod: Tiago Turnes (Brasil)</span>
@@ -442,7 +483,7 @@
                 </div>
 
                 <!-- Event Close -->
-                <div class="bg-slate-800 text-white rounded-xl shadow-md p-5 flex items-center justify-center gap-4 text-center max-w-sm mx-auto mt-8">
+                <div class="bg-slate-800 text-white rounded-xl shadow-md p-5 flex items-center justify-center gap-4 text-center max-w-sm mx-auto mt-8" data-aos="zoom-in">
                     <i class="fas fa-door-closed text-2xl text-slate-400"></i>
                     <div>
                         <h3 class="text-lg font-bold" data-i18n="event_close">Cierre del Evento</h3>
@@ -454,16 +495,65 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section id="faq" class="py-24 bg-white border-t border-slate-200">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-slate-100 text-slate-600 font-bold text-sm mb-4 uppercase tracking-wider">
+                    <i class="fas fa-question-circle text-primary"></i>
+                    <span>FAQ</span>
+                </div>
+                <h2 class="text-3xl font-black text-slate-900" data-i18n="faq_title">Preguntas Frecuentes</h2>
+            </div>
+            
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="bg-slate-50 border border-slate-200 rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <button class="w-full px-6 py-5 text-left font-bold text-slate-800 flex justify-between items-center focus:outline-none hover:bg-slate-100 transition-colors" onclick="toggleFaq(this)">
+                        <span data-i18n="faq_q1">¿Se emitirá certificado de participación?</span>
+                        <i class="fas fa-chevron-down text-slate-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="px-6 pb-5 hidden text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
+                        <p data-i18n="faq_a1">Sí, todos los inscritos que participen en el evento recibirán un certificado digital con la carga horaria correspondiente para validar sus actividades académicas.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="bg-slate-50 border border-slate-200 rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <button class="w-full px-6 py-5 text-left font-bold text-slate-800 flex justify-between items-center focus:outline-none hover:bg-slate-100 transition-colors" onclick="toggleFaq(this)">
+                        <span data-i18n="faq_q2">¿Las ponencias quedarán grabadas?</span>
+                        <i class="fas fa-chevron-down text-slate-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="px-6 pb-5 hidden text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
+                        <p data-i18n="faq_a2">Las sesiones se transmitirán en vivo y, posteriormente, quedarán disponibles de manera exclusiva para los inscritos en la plataforma oficial del evento durante 30 días.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="bg-slate-50 border border-slate-200 rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                    <button class="w-full px-6 py-5 text-left font-bold text-slate-800 flex justify-between items-center focus:outline-none hover:bg-slate-100 transition-colors" onclick="toggleFaq(this)">
+                        <span data-i18n="faq_q3">¿En qué idioma se realizarán las presentaciones?</span>
+                        <i class="fas fa-chevron-down text-slate-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="px-6 pb-5 hidden text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
+                        <p data-i18n="faq_a3">El simposio es bilingüe. Tendremos ponencias tanto en Español como en Portugués, dependiendo del idioma nativo del investigador invitado.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Call to Action / Registration -->
-    <section id="inscripcion" class="py-20 bg-white border-t border-slate-200">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-4" data-i18n="reg_title">Asegura tu participación</h2>
-            <p class="text-lg text-slate-600 mb-8 max-w-2xl mx-auto" data-i18n="reg_desc">
+    <section id="inscripcion" class="py-20 bg-primaryLight text-white border-t border-slate-200 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10" data-aos="zoom-in">
+            <h2 class="text-3xl md:text-4xl font-black mb-4" data-i18n="reg_title">Asegura tu participación</h2>
+            <p class="text-lg text-white/90 mb-8 max-w-2xl mx-auto" data-i18n="reg_desc">
                 No pierdas la oportunidad de actualizarte con los mayores especialistas de América Latina. Emisión de certificado de participación.
             </p>
             
-            <a href="https://inscricoes.ufsc.br/simposio-ejercicio-fisico" target="_blank" class="inline-flex items-center justify-center gap-3 px-10 py-4 bg-primary text-white rounded-full font-bold text-xl hover:bg-primary/90 transition-all transform hover:-translate-y-1 shadow-lg">
-                <i class="fas fa-ticket-alt"></i> <span data-i18n="reg_btn">Inscribirse Ahora</span>
+            <a href="https://inscricoes.ufsc.br/simposio-ejercicio-fisico" target="_blank" class="inline-flex items-center justify-center gap-3 px-10 py-4 bg-white text-primary rounded-full font-bold text-xl hover:bg-slate-100 transition-all transform hover:-translate-y-1 shadow-xl">
+                <i class="fas fa-ticket-alt text-secondary"></i> <span data-i18n="reg_btn">Inscribirse Ahora</span>
             </a>
         </div>
     </section>
@@ -488,19 +578,76 @@
         </div>
     </footer>
 
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // Initialize Animations
+        AOS.init({
+            once: true, // whether animation should happen only once - while scrolling down
+            offset: 50, // offset (in px) from the original trigger point
+            duration: 800, // values from 0 to 3000, with step 50ms
+        });
+
+        // FAQ Toggle Logic
+        function toggleFaq(btn) {
+            const content = btn.nextElementSibling;
+            const icon = btn.querySelector('i');
+            
+            // Toggle Content
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+            } else {
+                content.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+            }
+        }
+
+        // Countdown Logic
+        function updateCountdown() {
+            // Target date: August 29, 2026, 09:00:00 (GMT-3)
+            const targetDate = new Date("2026-08-29T09:00:00-03:00").getTime();
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) {
+                document.getElementById("countdown").innerHTML = "<div class='font-bold text-xl text-secondary px-4 py-2 bg-red-50 rounded-lg'>¡El evento ha comenzado!</div>";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("cd-days").innerText = days.toString().padStart(2, '0');
+            document.getElementById("cd-hours").innerText = hours.toString().padStart(2, '0');
+            document.getElementById("cd-mins").innerText = minutes.toString().padStart(2, '0');
+            document.getElementById("cd-secs").innerText = seconds.toString().padStart(2, '0');
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Run immediately
+
         // Translations Dictionary
         const translations = {
             es: {
                 nav_inicio: "Inicio",
                 nav_info: "Sobre el Evento",
                 nav_cronograma: "Cronograma",
+                nav_faq: "FAQ",
                 nav_inscripcion: "Inscripciones",
                 hero_title1: "I Simposio Latinoamericano de",
                 hero_title2: "Ejercicio Físico, Salud y Rendimiento",
                 hero_subtitle: "Únete a los principales investigadores y profesionales de América Latina para debatir las últimas evidencias en ciencias del deporte y la salud.",
                 hero_btn_main: "Inscribirse Ahora",
                 hero_btn_sec: "Ver Programa",
+                cd_days: "Días",
+                cd_hours: "Horas",
+                cd_mins: "Min",
+                cd_secs: "Seg",
+                loc_title: "Transmisión 100% Online",
+                loc_desc: "Asiste y participa desde cualquier lugar del mundo. Rompiendo fronteras por la ciencia.",
                 info_tag: "Sobre el Simposio",
                 info_title_main: "Integrando Ciencia y Práctica en",
                 info_title_highlight: "América Latina",
@@ -536,6 +683,13 @@
                 mesa4_t2: "Entrenamiento de intervalos en subida: respuestas agudas del VO2 y la frecuencia cardíaca.",
                 mesa4_t3: "Efectos cardiometabólicos del HIF",
                 event_close: "Cierre del Evento",
+                faq_title: "Preguntas Frecuentes",
+                faq_q1: "¿Se emitirá certificado de participación?",
+                faq_a1: "Sí, todos los inscritos que participen en el evento recibirán un certificado digital con la carga horaria correspondiente para validar sus actividades académicas.",
+                faq_q2: "¿Las ponencias quedarán grabadas?",
+                faq_a2: "Las sesiones se transmitirán en vivo y, posteriormente, quedarán disponibles de manera exclusiva para los inscritos en la plataforma oficial del evento durante 30 días.",
+                faq_q3: "¿En qué idioma se realizarán las presentaciones?",
+                faq_a3: "El simposio es bilingüe. Tendremos ponencias tanto en Español como en Portugués, dependiendo del idioma nativo del investigador invitado.",
                 reg_title: "Asegura tu participación",
                 reg_desc: "No pierdas la oportunidad de actualizarte con los mayores especialistas de América Latina. Emisión de certificado de participación.",
                 reg_btn: "Inscribirse Ahora",
@@ -546,12 +700,19 @@
                 nav_inicio: "Início",
                 nav_info: "Sobre o Evento",
                 nav_cronograma: "Cronograma",
+                nav_faq: "FAQ",
                 nav_inscripcion: "Inscrições",
                 hero_title1: "I Simpósio Latino-Americano de",
                 hero_title2: "Exercício Físico, Saúde e Rendimento",
                 hero_subtitle: "Junte-se aos principais pesquisadores e profissionais da América Latina para debater as evidências mais recentes em ciências do esporte e saúde.",
                 hero_btn_main: "Inscrever-se Agora",
                 hero_btn_sec: "Ver Programa",
+                cd_days: "Dias",
+                cd_hours: "Horas",
+                cd_mins: "Min",
+                cd_secs: "Seg",
+                loc_title: "Transmissão 100% Online",
+                loc_desc: "Assista e participe de qualquer lugar do mundo. Rompendo fronteiras pela ciência.",
                 info_tag: "Sobre o Simpósio",
                 info_title_main: "Integrando Ciência e Prática na",
                 info_title_highlight: "América Latina",
@@ -587,7 +748,14 @@
                 mesa4_t2: "Treinamento intervalado em subida: respostas agudas do VO2 e da frequência cardíaca.",
                 mesa4_t3: "Efeitos cardiometabólicos do HIF",
                 event_close: "Encerramento do Evento",
-                reg_title: "Garanta sua participação",
+                faq_title: "Perguntas Frequentes",
+                faq_q1: "Será emitido certificado de participação?",
+                faq_a1: "Sim, todos os inscritos que participarem no evento receberão um certificado digital com a carga horária correspondente para validar as suas atividades académicas.",
+                faq_q2: "As palestras ficarão gravadas?",
+                faq_a2: "As sessões serão transmitidas ao vivo e, posteriormente, ficarão disponíveis de forma exclusiva para os inscritos na plataforma oficial do evento durante 30 dias.",
+                faq_q3: "Em que idioma se realizarão as apresentações?",
+                faq_a3: "O simpósio é bilingue. Teremos palestras tanto em Espanhol como em Português, dependendo do idioma nativo do investigador convidado.",
+                reg_title: "Garanta a sua participação",
                 reg_desc: "Não perca a oportunidade de se atualizar com os maiores especialistas da América Latina. Emissão de certificado de participação.",
                 reg_btn: "Inscrever-se Agora",
                 footer_sub: "Exercício Físico, Saúde e Rendimento",
